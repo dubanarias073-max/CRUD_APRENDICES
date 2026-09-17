@@ -3,9 +3,9 @@ const express = require('express');
 const multer= require("multer")             // MOVIDO ARRIBA para evitar fallos de inicialización
 const sistemaArchivos = require ('fs');    // MOVIDO ARRIBA
 const ruta = require('path')                // MOVIDO ARRIBA para que funcione en el almacenamiento de multer
-const registroMiddleware =require("./middleware/registroMiddleware")
-const manejoErrores  = require ("./middleware/manejadorErrores")
-const autenticarToken= require("./middleware/autenticar")
+const registroMiddleware =require("./src/middleware/registroMiddleware")
+const manejoErrores  = require ("./src/middleware/manejadorErrores")
+const autenticarToken= require("./src/middleware/autenticar")
 const jwtoken =require("jsonwebtoken")
 
 
@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Importar validaciones
-const { validarCampos } = require('./validacion/validar');
+const { validarCampos } = require('./validaciones/validar');
 
 //body-parse
 app.use(express.json());
