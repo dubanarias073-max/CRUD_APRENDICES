@@ -4,9 +4,10 @@ const { Router } = require("express");
 const pruebaRouter =require("./pruebaRouter")
 const enrutador = Router()
 const autenticaRouter = require("./autenticarRouter")
-
+const usuariosRouter = require("./usuariosRouter")
 // usar enrutador
 enrutador.use("/rutaPrueba", pruebaRouter);
 enrutador.use("/autenticar", autenticaRouter)
+enrutador.use("/listado" , usuariosRouter)
 
 module.exports = enrutador;
